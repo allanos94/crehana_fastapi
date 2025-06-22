@@ -105,7 +105,7 @@ choco install docker-desktop
 
 #### 1. Clonar el repositorio
 ```bash
-git clone <tu-repositorio-url>
+git clone git@github.com:allanos94/crehana_fastapi.git
 cd crehana_fastapi
 ```
 
