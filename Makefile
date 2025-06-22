@@ -97,3 +97,16 @@ migrate-create: ## Crear migración manual (usar: make migrate-create MESSAGE="n
 
 run-local: ## Ejecutar servidor local sin Docker
 	uvicorn app.api.main:app --host 0.0.0.0 --port 8000 --reload
+
+# Pre-commit commands
+install-hooks: ## Instalar pre-commit hooks
+	pre-commit install
+
+pre-commit-all: ## Ejecutar pre-commit en todos los archivos
+	pre-commit run --all-files
+
+pre-commit-update: ## Actualizar versiones de pre-commit hooks
+	pre-commit autoupdate
+
+pre-commit-clean: ## Limpiar cache de pre-commit
+	pre-commit clean
