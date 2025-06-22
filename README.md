@@ -383,6 +383,23 @@ make lint
 make lint-fix
 ```
 
+### 🔧 Pre-commit (Recomendado)
+
+Pre-commit ejecuta automáticamente verificaciones antes de cada commit:
+
+```bash
+# Instalar hooks (solo primera vez)
+make install-hooks
+
+# Ejecutar en todos los archivos
+make pre-commit-all
+
+# Actualizar hooks
+make pre-commit-update
+```
+
+**Uso automático**: Una vez instalado, pre-commit se ejecuta automáticamente en cada `git commit`.
+
 ### 🗄️ Gestión de Base de Datos
 
 ```bash
