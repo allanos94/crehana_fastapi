@@ -1,0 +1,2 @@
+# Production requirements - Only what's needed to run the app
+-r base.in
