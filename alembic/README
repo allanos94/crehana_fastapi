@@ -1,0 +1,59 @@
+# Alembic Database Migrations
+
+Este directorio contiene las migraciones de base de datos del proyecto FastAPI Task Management usando Alembic.
+
+## Estructura
+
+```
+alembic/
+├── env.py              # Configuración del entorno de Alembic
+├── script.py.mako     # Template para nuevas migraciones
+├── alembic.ini        # Configuración principal (en directorio raíz)
+└── versions/          # Archivos de migración
+```
+
+## Comandos Disponibles
+
+### Crear migraciones automáticas:
+```bash
+make migrations
+```
+
+### Aplicar migraciones:
+```bash
+make migrate
+```
+
+### Ver estado actual:
+```bash
+make migrate-current
+```
+
+### Ver historial:
+```bash
+make migrate-history
+```
+
+### Rollback:
+```bash
+make migrate-down
+```
+
+### Crear migración manual:
+```bash
+make migrate-create MESSAGE="descripción del cambio"
+```
+
+## Flujo de Trabajo
+
+1. **Modificar modelos** en `app/domain/models/` o `app/infrastructure/db/models/`
+2. **Generar migración** con `make migrations`
+3. **Revisar** el archivo generado en `alembic/versions/`
+4. **Aplicar migración** con `make migrate`
+
+## Notas Importantes
+
+- Las migraciones se ejecutan automáticamente en desarrollo via `init_db()`
+- En producción, ejecutar migraciones manualmente antes del despliegue
+- Siempre revisar las migraciones autogeneradas antes de aplicarlas
+- No editar migraciones ya aplicadas en producción
