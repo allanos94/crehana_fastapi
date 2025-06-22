@@ -6,13 +6,7 @@ This module contains unit tests for repository implementations.
 
 from sqlalchemy.orm import Session
 
-from app.infrastructure.db.models import (
-    Task,
-    TaskList,
-    TaskPriority,
-    TaskStatus,
-    User,
-)
+from app.infrastructure.db.models import Task, TaskList, TaskPriority, TaskStatus, User
 from app.infrastructure.db.repositories import (
     TaskListRepository,
     TaskRepository,

@@ -6,12 +6,7 @@ This module contains unit tests for domain entities and business logic.
 
 from app.domain.models.task import Task
 from app.domain.models.task_list import TaskList
-from app.domain.value_objects import (
-    TaskListName,
-    TaskPriority,
-    TaskStatus,
-    TaskTitle,
-)
+from app.domain.value_objects import TaskListName, TaskPriority, TaskStatus, TaskTitle
 
 
 class TestTask:

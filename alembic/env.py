@@ -11,9 +11,6 @@ sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 
 # Import our models (this triggers registration in metadata)
 from app.infrastructure.db.models import Base
-from app.infrastructure.db.models.user import User
-from app.infrastructure.db.models.task_list import TaskList
-from app.infrastructure.db.models.task import Task
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
@@ -79,9 +76,7 @@ def run_migrations_online() -> None:
     )
 
     with connectable.connect() as connection:
-        context.configure(
-            connection=connection, target_metadata=target_metadata
-        )
+        context.configure(connection=connection, target_metadata=target_metadata)
 
         with context.begin_transaction():
             context.run_migrations()
